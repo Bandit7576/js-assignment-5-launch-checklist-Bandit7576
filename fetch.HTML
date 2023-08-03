@@ -5,6 +5,17 @@
             fetch('https://handlers.education.launchcode.org/static/planets.json').then( function(response)
              {response.json().then( function(json) {console.log(json)})
             });
+            function validateInput(testInput) {
+            if (testInput.trim() === '') {
+            console.log("Empty");
+            } else if (isNaN(testInput)) {
+            console.log( "Not a Number");
+            } else {
+            console.log("Is a Number");
+            }
+}
+
+validateInput('5');
         </script>
     </head>
     <body>
