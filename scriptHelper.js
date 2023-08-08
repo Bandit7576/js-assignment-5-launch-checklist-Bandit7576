@@ -37,20 +37,12 @@ function validateInput(pilot, copilot, fuelLevel, cargoLevel) {
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    list.style.visibility = "visible";
    let pilotStatus = document.getElementById('pilotStatus');
-   console.log(pilot);
    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
    let copilotStatus = document.getElementById('copilotStatus');
-   console.log(copilot);
-
    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
    let fuelStatus = document.getElementById('fuelStatus');
-   console.log(fuelStatus);
-
    let cargoStatus = document.getElementById('cargoStatus');
-   console.log(cargoStatus);
-
    let launchStatus = document.getElementById("launchStatus");
-   console.log(launchStatus);
 
 
    if (fuelLevel < 10000 && cargoLevel <= 10000) {
