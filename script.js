@@ -4,6 +4,8 @@
 
 
 
+
+
 window.addEventListener("load", function() {
 
 
@@ -14,24 +16,29 @@ window.addEventListener("load", function() {
     listedPlanetsResponse.then(function (result) {
         result.json().then(function (json) {
             console.log(json);
-            const missionTarget = document.getElementById('missionTarget');
             let planet = pickPlanet(json);
-            missionTarget.innerHTML = addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
+            addDestinationInfo(document, planet.name, planet.diameter, planet.star, planet.distance, planet.moons, planet.image);
         });
 
 
     });
 
-    const form = document.querySelector('form');
     const pilot = document.querySelector('input[name=pilotName]').value;
+    const form = document.querySelector('form');
 
-    
-    const faultyItems = document.getElementById('faultyItems');
-    faultyItems.style.visibility = hidden;
+    let faultyItems = document.getElementById('faultyItems');
+    faultyItems.style.visibility = "hidden";
 
-    
     form.addEventListener("submit", function(event) {
         event.preventDefault();
+        let pilot = document.querySelector("input[name=pilotName]").value;
+        let copilot = document.querySelector("input[name=copilotName]").value;
+        let fuelLevel = document.querySelector("input[name=fuelLevel]").value;
+        let cargoLevel = document.querySelector("input[name=cargoMass]").value;
+
+        if (validateInput(pilot, copilot, fuelLevel, cargoLevel) === "Is a Number") {
+            formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel ) 
+        }
 
     });
 
