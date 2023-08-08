@@ -34,15 +34,15 @@ function validateInput(pilot, copilot, fuelLevel, cargoLevel) {
 }
 
 
-function formSubmission(document, faultyItems, pilot, copilot, fuelLevel, cargoLevel) {
-   faultyItems.style.visibility = "visable";
+function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+   list.style.visibility = "visible";
    let pilotStatus = document.getElementById('pilotStatus');
    console.log(pilot);
    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
    let copilotStatus = document.getElementById('copilotStatus');
    console.log(copilot);
 
-   copilotStatus.innerHTML = `Pilot ${copilot} is ready for launch`;
+   copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
    let fuelStatus = document.getElementById('fuelStatus');
    console.log(fuelStatus);
 
